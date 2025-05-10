@@ -1,9 +1,38 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
   <head>
+    <meta charset="UTF-8">
     <title>Mon Journal Émotionnel</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="module" src="firebase-config.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
   </head>
-  <body>
-    <h1>Bienvenue sur Mon Journal Émotionnel</h1>
+  <body class="bg-gray-100 min-h-screen">
+    <div class="max-w-xl mx-auto mt-10 p-6 bg-white rounded shadow">
+      <h1 class="text-2xl font-bold mb-4 text-center">Mon Journal Émotionnel</h1>
+      <div id="user-section" class="mb-4 flex flex-col items-center">
+        <div id="auth-section" class="w-full flex flex-col gap-2 mb-2">
+          <input id="email" type="email" placeholder="Email" class="border p-2 w-full rounded" />
+          <input id="password" type="password" placeholder="Mot de passe" class="border p-2 w-full rounded" />
+          <div class="flex gap-2">
+            <button id="login-btn" class="bg-blue-500 text-white px-4 py-2 rounded w-1/2">Connexion</button>
+            <button id="register-btn" class="bg-gray-500 text-white px-4 py-2 rounded w-1/2">Inscription</button>
+          </div>
+          <button id="logout-btn" class="bg-red-500 text-white px-4 py-2 rounded w-full hidden">Déconnexion</button>
+        </div>
+        <div id="user-info" class="text-sm text-gray-600"></div>
+      </div>
+      <div id="app-section" class="hidden">
+        <div id="chat-container" class="mb-4 h-64 overflow-y-auto border rounded p-2 bg-gray-50"></div>
+        <div class="flex gap-2 mb-2">
+          <input id="chat-input" class="border p-2 flex-1 rounded" placeholder="Exprimez votre émotion..." />
+          <button id="send-btn" class="bg-blue-500 text-white px-4 py-2 rounded">Envoyer</button>
+        </div>
+        <button id="synthese-btn" class="bg-green-500 text-white px-4 py-2 rounded w-full mb-4">Synthèse et Enregistrement</button>
+        <h2 class="text-lg font-semibold mt-6 mb-2">Mon Journal</h2>
+        <div id="journal-container" class="space-y-2"></div>
+      </div>
+    </div>
+    <script type="module" src="app.js"></script>
   </body>
 </html>
