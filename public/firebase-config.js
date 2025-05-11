@@ -1,3 +1,8 @@
+// Déplacer les imports au début du fichier
+import { initializeApp } from 'firebase/app';
+import { getAuth } from 'firebase/auth';
+import { getFirestore } from 'firebase/firestore';
+
 // Configuration Firebase
 const firebaseConfig = {
   // TODO: Remplacer par vos propres configurations Firebase
@@ -6,14 +11,10 @@ const firebaseConfig = {
   projectId: "tcc-app-9be0c",
   storageBucket: "tcc-app-9be0c.firebasestorage.app",
   messagingSenderId: "653275556191",
-  appId: "G-KVXNE2VVM0"
+  appId: "1:653275556191:web:XXXXX" // Il faut le bon appId de Firebase ici
 };
 
 // Initialisation de Firebase
-import { initializeApp } from 'firebase/app';
-import { getAuth } from 'firebase/auth';
-import { getFirestore } from 'firebase/firestore';
-
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore(app);
